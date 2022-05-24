@@ -25,7 +25,7 @@ class _BookListPageState extends State<BookListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Book Catalogue"),
+        title: const Text("Book Catalogue"),
         centerTitle: true,
       ),
       body: Consumer<BookController>(

@@ -12,8 +12,6 @@ class BookController extends ChangeNotifier {
     var url = Uri.parse('https://api.itbook.store/1.0/new');
     var response =
         await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
-    print('Response status: ${response.statusCode}');
-    print('Response body: ${response.body}');
 
     if (response.statusCode == 200) {
       final jsonBookList = jsonDecode(response.body);
@@ -28,8 +26,6 @@ class BookController extends ChangeNotifier {
   fetchBookDetailApi({required String isbn}) async {
     var url = Uri.parse('https://api.itbook.store/1.0/books/$isbn');
     var response = await http.get(url);
-    print('Response status: ${response.statusCode}');
-    print('Response body: ${response.body}');
 
     if (response.statusCode == 200) {
       final jsonBookList = jsonDecode(response.body);
@@ -42,8 +38,6 @@ class BookController extends ChangeNotifier {
   fetchSimilarBookApi(String title) async {
     var url = Uri.parse('https://api.itbook.store/1.0/search/$title');
     var response = await http.get(url);
-    print('Response status: ${response.statusCode}');
-    print('Response body: ${response.body}');
 
     if (response.statusCode == 200) {
       final jsonBookList = jsonDecode(response.body);

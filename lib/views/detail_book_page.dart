@@ -73,10 +73,10 @@ class _DetailBookPageState extends State<DetailBookPage> {
                         try {
                           (await canLaunchUrl(uri))
                               ? launchUrl(uri)
+                              // ignore: avoid_print
                               : print("cant Launch URL");
-                        } catch (e) {
-                          print(e.toString());
-                        }
+                          // ignore: empty_catches
+                        } catch (e) {}
                       },
                       child: Container(
                         padding: const EdgeInsets.all(16),
